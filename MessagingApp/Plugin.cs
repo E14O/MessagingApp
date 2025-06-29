@@ -2,7 +2,6 @@
 using System.Collections;
 using BepInEx;
 using MonkePhone.Behaviours;
-using MonkePhone.Behaviours.Apps;
 using UnityEngine;
 
 namespace MessagingApp
@@ -14,7 +13,7 @@ namespace MessagingApp
 
         private IEnumerator PhoneHandlerInit()
         {
-            yield return new WaitUntil(() => PhoneHandler.Instance != null);
+            yield return new WaitUntil(() => PhoneHandler.Instance.Phone != null);
 
             try
             {
@@ -24,7 +23,6 @@ namespace MessagingApp
                     {
                         case "MessagingApp":
                             App.gameObject.SetActive(false);
-                            App.GetComponent<MonkePhone.Behaviours.Apps.MessagingApp>().Destroy();
                             PhoneHandler.Instance.CreateApp<Behaviours.Apps.MessagingApp>(App.gameObject);
                             break;
                     }

@@ -19,7 +19,7 @@ namespace MessagingApp.Behaviours.Apps
             _Header.transform.localPosition = new Vector3(0f, 42.3818f, 0f);
         }
 
-        public override void AppOpened()
+      /*  public override void AppOpened()
         {
             base.AppOpened();
 
@@ -42,6 +42,6 @@ namespace MessagingApp.Behaviours.Apps
         private void RefreshApp()
         {
             // e.g what code u want cause like so epic
-        }
+        }*/
     }
 }
