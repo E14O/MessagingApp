@@ -30,7 +30,7 @@ namespace MessagingApp.Utilities
             COC.text = "Loading Your Infomation....";
             COCHTextObj = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/CodeOfConductHeadingText");
             COCH = COCHTextObj.GetComponent<TextMeshPro>();
-            COCH.text = "LOADING";
+            COCH.text = "MonkeMessaging - \nStatus: Loading User Data";
 
             // This is where im setting all your account details if you have a account
 
@@ -50,7 +50,13 @@ namespace MessagingApp.Utilities
             }
 
             // gets the players current player id so we can try and find your account
-            await Task.Delay(30000);
+
+            while (!PhotonNetwork.IsConnectedAndReady)
+            {
+                Logging.Log("Waiting For Photon To Initialise..");
+                await Task.Yield();
+            }
+
             string currentPlayerID = PhotonNetwork.LocalPlayer.UserId;
             Logging.Log(info);
 
@@ -61,7 +67,6 @@ namespace MessagingApp.Utilities
                 if (parts.Length < 4)
                     continue;
 
-                // splits all the data up into 4 parts 
                 string userId = parts[0].Trim();
                 string username = parts[1].Trim();
                 string playerId = parts[2].Trim().Replace("\uFEFF", ""); // some google dock told me this will work lets see (Removes A Byte Order Mark (BOM) That Was Fucking Up Our System)
@@ -69,12 +74,12 @@ namespace MessagingApp.Utilities
 
                 Logging.Log($"{userId} {username} {playerId} {userCode}");
 
-                // checking if you have a account !
+              /// Checks for the player ID for the user.
                 if (playerId == currentPlayerID)
                 {
                     setName = username;
                     code = userCode;
-                    Logging.Log($"SetName: {setName}, Code: {code}"); // YAY they have a account
+                    Logging.Log($"SetName: {setName}, Code: {code}"); /// If the user does have an account their information will be displayed.
                     HasAccount = true;
                     COC.text = $"\n\nUsername: {setName}\nFriend Code: {code}\n\nIf Something Is Wrong Please Contact Support :)";
                     COCH.text = "MonkeMessaging - \nStatus: Logged In";
@@ -86,7 +91,7 @@ namespace MessagingApp.Utilities
             {
                 COC.text = "\n\nYou Do Not Have A Account Join The Discord (https://discord.gg/tbHvpqF5qy) And Do ?CreateAccount!\n\nIf Something Is Wrong Please Contact Support :)";
                 COCH.text = "MonkeMessaging - \nStatus: No Account";
-                Logging.Log("You Do Not Have A Account!"); // Boooo This user is not cool
+                Logging.Log("You Do Not Have A Account!"); /// The user does not have an account if this log is displayed.
             }
         }
 

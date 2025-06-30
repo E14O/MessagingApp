@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections;
-using System.IO;
 using BepInEx;
 using MessagingApp.Utilities;
 using MonkePhone.Behaviours;
-using MonkePhone.Behaviours.Apps;
-using MonkePhone.Tools;
+using MonkePhone.Behaviours.UI;
+using Photon.Pun;
 using UnityEngine;
+using Viveport;
 
 namespace MessagingApp
 {
@@ -17,7 +17,7 @@ namespace MessagingApp
 
         private void Start()
         {
-            Instance = this; 
+            Instance = this;
             GorillaTagger.OnPlayerSpawned(Initialization);
         }
 
@@ -26,29 +26,31 @@ namespace MessagingApp
             try
             {
                 new GameObject(Constants.Name, typeof(UserAuth));
+                Logger.LogInfo("Loading UserAuth...");
 
                 StartCoroutine(PhoneHandlerInit());
             }
             catch
             {
-                Logging.Error($"{Constants.Name} Unavailable, Account data could not be loaded.");
+                Logger.LogError($"{Constants.Name} Unavailable, Account data could not be loaded.");
             }
         }
 
         private IEnumerator PhoneHandlerInit()
         {
-            yield return new WaitUntil(() => PhoneHandler.Instance != null);
+            yield return new WaitUntil(() => PhotonNetwork.IsConnectedAndReady);
 
             try
             {
-                foreach (Transform App in PhoneHandler.Instance.Phone.transform.Find("Canvas"))
+                foreach (Transform app in PhoneHandler.Instance.Phone.transform.Find("Canvas"))
                 {
-                    switch (App.name)
+                    switch (app.name)
                     {
                         case "MessagingApp":
-                            App.gameObject.SetActive(false);
-                            App.GetComponent<MonkePhone.Behaviours.Apps.MessagingApp>().Destroy();
-                            PhoneHandler.Instance.CreateApp<Behaviours.Apps.MessagingApp>(App.gameObject);
+                           // app.gameObject.SetActive(false);
+                            app.GetComponent<MonkePhone.Behaviours.Apps.MessagingApp>().Destroy();
+                            PhoneHandler.Instance.CreateApp<Behaviours.Apps.MessagingApp>(app.gameObject);
+                            Logger.LogInfo($"Creating App...");
                             break;
                     }
                 }
@@ -59,14 +61,17 @@ namespace MessagingApp
                     {
                         case "MessagingIcon":
                             Icon.gameObject.SetActive(true);
+                            Icon.gameObject.GetComponent<MonkePhone.Behaviours.UI.PhoneAppIcon>().Destroy();
+                            Icon.gameObject.AddComponent<PhoneAppIcon>().appId = "Messaging";
                             break;
+
                     }
                 }
-                Logging.Info($"{Constants.Name} Successfully Created!");
+                Logger.LogInfo($"{Constants.Name} Successfully Created!");
             }
             catch (Exception e)
             {
-                Logging.Error($"{Constants.Name} Unable To Be Created!, Error Code: {e}");
+                Logger.LogError($"{Constants.Name} Unable To Be Created!, Error Code: {e}");
             }
         }
     }
