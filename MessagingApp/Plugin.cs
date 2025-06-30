@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using BepInEx;
+using MessagingApp.Utilities;
 using MonkePhone.Behaviours;
+using MonkePhone.Behaviours.Apps;
+using MonkePhone.Tools;
 using UnityEngine;
 
 namespace MessagingApp
@@ -9,11 +13,31 @@ namespace MessagingApp
     [BepInPlugin(Constants.GUID, Constants.Name, Constants.Version)]
     public class Plugin : BaseUnityPlugin
     {
-        void Start() => StartCoroutine(PhoneHandlerInit());
+        public static Plugin Instance { get; private set; }
+
+        private void Start()
+        {
+            Instance = this; 
+            GorillaTagger.OnPlayerSpawned(Initialization);
+        }
+
+        private void Initialization()
+        {
+            try
+            {
+                new GameObject(Constants.Name, typeof(UserAuth));
+
+                StartCoroutine(PhoneHandlerInit());
+            }
+            catch
+            {
+                Logging.Error($"{Constants.Name} Unavailable, Account data could not be loaded.");
+            }
+        }
 
         private IEnumerator PhoneHandlerInit()
         {
-            yield return new WaitUntil(() => PhoneHandler.Instance.Phone != null);
+            yield return new WaitUntil(() => PhoneHandler.Instance != null);
 
             try
             {
@@ -23,6 +47,7 @@ namespace MessagingApp
                     {
                         case "MessagingApp":
                             App.gameObject.SetActive(false);
+                            App.GetComponent<MonkePhone.Behaviours.Apps.MessagingApp>().Destroy();
                             PhoneHandler.Instance.CreateApp<Behaviours.Apps.MessagingApp>(App.gameObject);
                             break;
                     }
@@ -37,12 +62,11 @@ namespace MessagingApp
                             break;
                     }
                 }
-
-                Logger.LogInfo("MessagingApp Successfully Created!");
+                Logging.Info($"{Constants.Name} Successfully Created!");
             }
             catch (Exception e)
             {
-                Logger.LogError($"MessagingApp Unable To Be Created!, Error Code:{e}");
+                Logging.Error($"{Constants.Name} Unable To Be Created!, Error Code: {e}");
             }
         }
     }
