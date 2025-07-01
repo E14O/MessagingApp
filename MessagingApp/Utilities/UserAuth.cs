@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using MessagingApp.Behaviours.Apps;
 using MonkePhone.Tools;
 using Photon.Pun;
 using TMPro;
@@ -9,29 +10,26 @@ namespace MessagingApp.Utilities
 {
     public class UserAuth : MonoBehaviour
     {
+        public static UserAuth Instance { get; private set; }
         public TextMeshPro COC, COCH;
         public GameObject COCTextObj, COCHTextObj;
         public bool HasAccount = false;
         string info = "";
         string setName = "";
         string code = "";
+        string userId = "";
+        string username = "";
+        string playerId = "";
+        public string userCode = "";
 
         public void Start()
         {
+            Instance = this;
             AuthInit();
         }
 
         public async void AuthInit()
         {
-            // Setting The COC Stuff
-
-            COCTextObj = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/COCBodyText_TitleData");
-            COC = COCTextObj.GetComponent<TextMeshPro>();
-            COC.text = "Loading Your Infomation....";
-            COCHTextObj = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/CodeOfConductHeadingText");
-            COCH = COCHTextObj.GetComponent<TextMeshPro>();
-            COCH.text = "MonkeMessaging - \nStatus: Loading User Data";
-
             // This is where im setting all your account details if you have a account
 
             try
@@ -67,10 +65,10 @@ namespace MessagingApp.Utilities
                 if (parts.Length < 4)
                     continue;
 
-                string userId = parts[0].Trim();
-                string username = parts[1].Trim();
-                string playerId = parts[2].Trim().Replace("\uFEFF", ""); // some google dock told me this will work lets see (Removes A Byte Order Mark (BOM) That Was Fucking Up Our System)
-                string userCode = parts[3].Trim();
+                userId = parts[0].Trim();
+                username = parts[1].Trim();
+                playerId = parts[2].Trim().Replace("\uFEFF", ""); // some google dock told me this will work lets see (Removes A Byte Order Mark (BOM) That Was Fucking Up Our System)
+                userCode = parts[3].Trim();
 
                 Logging.Log($"{userId} {username} {playerId} {userCode}");
 
