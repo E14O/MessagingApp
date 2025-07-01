@@ -1,6 +1,7 @@
 ﻿
 using MessagingApp.Utilities;
 using MonkePhone.Behaviours;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,22 +12,31 @@ namespace MessagingApp.Behaviours.Apps
         public override string AppId => "Messaging";
 
         public Text _Header;
+        public GameObject _newPage, _newPageT;
 
         public override void Initialize()
         {
             _Header = transform.Find("Header").GetComponent<Text>();
             _Header.transform.localPosition = new Vector3(0f, 42.3818f, 0f);
+
+            _newPage = new GameObject("Info");
+            _newPage.transform.SetParent(gameObject.transform, true);
+
+            _newPageT = Instantiate(transform.Find("Header").gameObject);
+            _newPageT.transform.SetParent(_newPage.transform, true);
+            _newPageT.transform.SetSiblingIndex(2);
+
         }
 
-         public override void AppOpened()
-         {
-             base.AppOpened();
+        public override void AppOpened()
+        {
+            base.AppOpened();
 
-             // this gets called once the app is opened so if u want some code to run here u can 
-             // most of the time this void isnt used so you can remove it.
+            transform.GetChild(3 & 4).gameObject.SetActive(false);
+            _newPageT.name = "loading...";
 
             RefreshApp();
-         }
+        }
 
         /*public override void ButtonClick(PhoneUIObject phoneUIObject, bool isLeftHand)
          {
@@ -38,10 +48,9 @@ namespace MessagingApp.Behaviours.Apps
              }
          }*/
 
-         private void RefreshApp()
-         {
-            // e.g what code u want cause like so epic
-            _Header.text = $"Messaging - {UserAuth.Instance.userCode}";
+        private void RefreshApp()
+        {
+
         }
     }
 }

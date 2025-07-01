@@ -1,9 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
-using MessagingApp.Behaviours.Apps;
 using MonkePhone.Tools;
 using Photon.Pun;
-using TMPro;
 using UnityEngine;
 
 namespace MessagingApp.Utilities
@@ -11,15 +9,14 @@ namespace MessagingApp.Utilities
     public class UserAuth : MonoBehaviour
     {
         public static UserAuth Instance { get; private set; }
-        public TextMeshPro COC, COCH;
         public GameObject COCTextObj, COCHTextObj;
         public bool HasAccount = false;
         string info = "";
         string setName = "";
         string code = "";
         string userId = "";
-        string username = "";
-        string playerId = "";
+        public string userName = "";
+        public string playerId = "";
         public string userCode = "";
 
         public void Start()
@@ -66,29 +63,27 @@ namespace MessagingApp.Utilities
                     continue;
 
                 userId = parts[0].Trim();
-                username = parts[1].Trim();
+                userName = parts[1].Trim();
                 playerId = parts[2].Trim().Replace("\uFEFF", ""); // some google dock told me this will work lets see (Removes A Byte Order Mark (BOM) That Was Fucking Up Our System)
                 userCode = parts[3].Trim();
 
-                Logging.Log($"{userId} {username} {playerId} {userCode}");
+                Logging.Log($"{userId} {userName} {playerId} {userCode}");
 
-              /// Checks for the player ID for the user.
+                /// Checks for the player ID for the user.
                 if (playerId == currentPlayerID)
                 {
-                    setName = username;
+                    setName = userName;
                     code = userCode;
                     Logging.Log($"SetName: {setName}, Code: {code}"); /// If the user does have an account their information will be displayed.
                     HasAccount = true;
-                    COC.text = $"\n\nUsername: {setName}\nFriend Code: {code}\n\nIf Something Is Wrong Please Contact Support :)";
-                    COCH.text = "MonkeMessaging - \nStatus: Logged In";
                     break;
                 }
             }
 
             if (string.IsNullOrEmpty(setName))
             {
-                COC.text = "\n\nYou Do Not Have A Account Join The Discord (https://discord.gg/tbHvpqF5qy) And Do ?CreateAccount!\n\nIf Something Is Wrong Please Contact Support :)";
-                COCH.text = "MonkeMessaging - \nStatus: No Account";
+                // COC.text = "\n\nYou Do Not Have A Account Join The Discord (https://discord.gg/tbHvpqF5qy) And Do ?CreateAccount!\n\nIf Something Is Wrong Please Contact Support :)";
+                // COCH.text = "MonkeMessaging - \nStatus: No Account";
                 Logging.Log("You Do Not Have A Account!"); /// The user does not have an account if this log is displayed.
             }
         }
