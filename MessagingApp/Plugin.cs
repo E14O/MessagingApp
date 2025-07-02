@@ -47,9 +47,9 @@ namespace MessagingApp
                     switch (app.name)
                     {
                         case "MessagingApp":
-                           // app.gameObject.SetActive(false);
+                            app.gameObject.SetActive(true);
                             app.GetComponent<MonkePhone.Behaviours.Apps.MessagingApp>().Destroy();
-                            PhoneHandler.Instance.CreateApp<Behaviours.Apps.MessagingApp>(app.gameObject);
+                            PhoneHandler.Instance.CreateApp<Behaviours.App.MessagingApp>(app.gameObject);
                             Logger.LogInfo($"Creating App...");
                             break;
                     }

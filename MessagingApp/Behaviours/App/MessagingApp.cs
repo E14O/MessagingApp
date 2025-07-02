@@ -1,18 +1,15 @@
-﻿
-using MessagingApp.Utilities;
-using MonkePhone.Behaviours;
-using Unity.IO.LowLevel.Unsafe;
+﻿using MonkePhone.Behaviours;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MessagingApp.Behaviours.Apps
+namespace MessagingApp.Behaviours.App
 {
     public class MessagingApp : PhoneApp
     {
         public override string AppId => "Messaging";
 
         public Text _Header;
-        public GameObject _newPage, _newPageT;
+        public GameObject _newPage, _newPageT, gameobjecta, gameobjectb;
 
         public override void Initialize()
         {
@@ -20,20 +17,34 @@ namespace MessagingApp.Behaviours.Apps
             _Header.transform.localPosition = new Vector3(0f, 42.3818f, 0f);
 
             _newPage = new GameObject("Info");
-            _newPage.transform.SetParent(gameObject.transform, true);
+            _newPage.transform.SetParent(transform, false);
+            _newPage.transform.position = new Vector3(-65.7571f, 11.6977f, -80.0866f);
+            _newPage.transform.SetSiblingIndex(2);
 
-            _newPageT = Instantiate(transform.Find("Header").gameObject);
-            _newPageT.transform.SetParent(_newPage.transform, true);
-            _newPageT.transform.SetSiblingIndex(2);
+            Transform htp = transform.Find("Header");
 
+            _newPageT = Instantiate(htp.gameObject, _newPage.transform, false);
+            _newPageT.name = "Header";
+            _newPageT.transform.localPosition = new Vector3(-1.5f, 26.191f, 0f);
+            _newPageT.transform.localScale = new Vector3(0.4362f, 0.4362f, 0.6362f);
+
+            Text ht = _newPageT.GetComponent<Text>();
+            ht.horizontalOverflow = HorizontalWrapMode.Overflow;
+            ht.verticalOverflow = VerticalWrapMode.Overflow;
+
+            // hey instead of doing this cause ye we will just dup more of the text alright then add the shit to it.
+            ht.text = " Status: Logged In\r\n\r\nUsername: ???? \r\nFriend Code: ????";
+
+            gameobjecta = transform.Find("Chat Messages").gameObject;
+            gameobjecta.SetActive(false);
+
+            gameobjectb = transform.Find("Chat Box").gameObject;
+            gameobjectb.SetActive(false);
         }
 
         public override void AppOpened()
         {
             base.AppOpened();
-
-            transform.GetChild(3 & 4).gameObject.SetActive(false);
-            _newPageT.name = "loading...";
 
             RefreshApp();
         }

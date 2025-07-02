@@ -27,24 +27,17 @@ namespace MessagingApp.Utilities
 
         public async void AuthInit()
         {
-            // This is where im setting all your account details if you have a account
-
             try
             {
-                // This sends out the request to my gist
                 var response = await new HttpClient().GetAsync("https://gist.github.com/E14O/2fc8e12c2c54da568c66fede2b1ec5f0/raw");
                 response.EnsureSuccessStatusCode();
-                // gets the content! YAY!
                 info = await response.Content.ReadAsStringAsync();
             }
             catch (HttpRequestException e)
             {
-                // if the gist cannot be accessed for any reason this error will show in logs
                 Logging.Error($"ERROR SENDING REQUEST {e}");
                 return;
             }
-
-            // gets the players current player id so we can try and find your account
 
             while (!PhotonNetwork.IsConnectedAndReady)
             {
@@ -55,7 +48,6 @@ namespace MessagingApp.Utilities
             string currentPlayerID = PhotonNetwork.LocalPlayer.UserId;
             Logging.Log(info);
 
-            // splitting the data up 
             foreach (string line in info.Split('\n'))
             {
                 var parts = line.Trim().Split(',');
@@ -69,12 +61,11 @@ namespace MessagingApp.Utilities
 
                 Logging.Log($"{userId} {userName} {playerId} {userCode}");
 
-                /// Checks for the player ID for the user.
                 if (playerId == currentPlayerID)
                 {
                     setName = userName;
                     code = userCode;
-                    Logging.Log($"SetName: {setName}, Code: {code}"); /// If the user does have an account their information will be displayed.
+                    Logging.Log($"SetName: {setName}, Code: {code}");
                     HasAccount = true;
                     break;
                 }
