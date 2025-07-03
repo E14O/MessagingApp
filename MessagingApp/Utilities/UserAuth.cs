@@ -18,7 +18,7 @@ namespace MessagingApp.Utilities
         public string userName = "";
         public string playerId = "";
         public string userCode = "";
-
+        public string status = "";
         public void Start()
         {
             Instance = this;
@@ -67,15 +67,20 @@ namespace MessagingApp.Utilities
                     code = userCode;
                     Logging.Log($"SetName: {setName}, Code: {code}");
                     HasAccount = true;
-                    break;
-                }
-            }
 
-            if (string.IsNullOrEmpty(setName))
-            {
-                // COC.text = "\n\nYou Do Not Have A Account Join The Discord (https://discord.gg/tbHvpqF5qy) And Do ?CreateAccount!\n\nIf Something Is Wrong Please Contact Support :)";
-                // COCH.text = "MonkeMessaging - \nStatus: No Account";
-                Logging.Log("You Do Not Have A Account!"); /// The user does not have an account if this log is displayed.
+                    if (string.IsNullOrEmpty(setName))
+                    {
+                        status = "No Account";
+                        HasAccount = false;
+                        Logging.Log("You Do Not Have A Account!");
+                    }
+                    else
+                    {
+                        status = "Authenticated";
+                    }
+
+                    break;     
+                }
             }
         }
 

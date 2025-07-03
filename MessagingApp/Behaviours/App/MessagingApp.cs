@@ -1,4 +1,5 @@
-﻿using MonkePhone.Behaviours;
+﻿using MessagingApp.Utilities;
+using MonkePhone.Behaviours;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,15 +26,16 @@ namespace MessagingApp.Behaviours.App
 
             _newPageT = Instantiate(htp.gameObject, _newPage.transform, false);
             _newPageT.name = "Header";
-            _newPageT.transform.localPosition = new Vector3(-1.5f, 26.191f, 0f);
-            _newPageT.transform.localScale = new Vector3(0.4362f, 0.4362f, 0.6362f);
+            _newPageT.transform.localPosition = new Vector3(-6.3145f, 35.0311f, 0f);
+            _newPageT.transform.localScale = new Vector3(0.4544f, 0.4544f, 0.7362f);
 
             Text ht = _newPageT.GetComponent<Text>();
+            ht.alignment = TextAnchor.UpperLeft;
             ht.horizontalOverflow = HorizontalWrapMode.Overflow;
             ht.verticalOverflow = VerticalWrapMode.Overflow;
 
             // hey instead of doing this cause ye we will just dup more of the text alright then add the shit to it.
-            ht.text = " Status: Logged In\r\n\r\nUsername: ???? \r\nFriend Code: ????";
+            ht.text = $"Status: {UserAuth.Instance.status}\r\n\r\nUsername: ???? \r\nFriend Code: ????";
 
             gameobjecta = transform.Find("Chat Messages").gameObject;
             gameobjecta.SetActive(false);
