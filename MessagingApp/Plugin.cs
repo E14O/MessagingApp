@@ -61,7 +61,7 @@ namespace MessagingApp
                     {
                         case "MessagingIcon":
                             Icon.gameObject.SetActive(true);
-                            Icon.gameObject.GetComponent<MonkePhone.Behaviours.UI.PhoneAppIcon>().Destroy();
+                          //  Icon.gameObject.GetComponent<MonkePhone.Behaviours.UI.PhoneAppIcon>().Destroy();
                             Icon.gameObject.AddComponent<PhoneAppIcon>().appId = "Messaging";
                             break;
 

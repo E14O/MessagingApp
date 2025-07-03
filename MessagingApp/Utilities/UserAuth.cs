@@ -9,7 +9,6 @@ namespace MessagingApp.Utilities
     public class UserAuth : MonoBehaviour
     {
         public static UserAuth Instance { get; private set; }
-        public GameObject COCTextObj, COCHTextObj;
         public bool HasAccount = false;
         string info = "";
         string setName = "";
@@ -19,6 +18,9 @@ namespace MessagingApp.Utilities
         public string playerId = "";
         public string userCode = "";
         public string status = "";
+
+        // some time ill rego over this code i hate it so much.
+
         public void Start()
         {
             Instance = this;
@@ -45,7 +47,6 @@ namespace MessagingApp.Utilities
                 await Task.Yield();
             }
 
-            string currentPlayerID = PhotonNetwork.LocalPlayer.UserId;
             Logging.Log(info);
 
             foreach (string line in info.Split('\n'))
@@ -54,36 +55,40 @@ namespace MessagingApp.Utilities
                 if (parts.Length < 4)
                     continue;
 
-                userId = parts[0].Trim();
-                userName = parts[1].Trim();
-                playerId = parts[2].Trim().Replace("\uFEFF", ""); // some google dock told me this will work lets see (Removes A Byte Order Mark (BOM) That Was Fucking Up Our System)
-                userCode = parts[3].Trim();
+                string id = parts[0].Trim();
+                string name = parts[1].Trim();
+                string pid = parts[2].Trim().Replace("\uFEFF", "");
+                string ucode = parts[3].Trim();
 
-                Logging.Log($"{userId} {userName} {playerId} {userCode}");
+                Logging.Log($"{id} {name} {pid} {ucode}");
 
-                if (playerId == currentPlayerID)
+                if (pid == PhotonNetwork.LocalPlayer.UserId)
                 {
+                    userId = id;
+                    userName = name;
+                    playerId = pid;
+                    userCode = ucode;
+
                     setName = userName;
                     code = userCode;
                     Logging.Log($"SetName: {setName}, Code: {code}");
                     HasAccount = true;
-
-                    if (string.IsNullOrEmpty(setName))
-                    {
-                        status = "No Account";
-                        HasAccount = false;
-                        Logging.Log("You Do Not Have A Account!");
-                    }
-                    else
-                    {
-                        status = "Authenticated";
-                    }
-
-                    break;     
+                    break;
                 }
             }
-        }
 
+            if (string.IsNullOrEmpty(setName))
+            {
+                status = "No Account\r\n\r\nYou Do Not Have A\r\nAccount. Create An\r\nAccount By Joining\r\nThe Discord Server\r\n\r\n<color=yellow>https://discord.gg/</color>\r\n<color=yellow>tbHvpqF5qy</color>";
+                HasAccount = false;
+                Logging.Log("you have no stinking account");
+            }
+            else
+            {
+                status = "Logged In";
+                Logging.Log("user innnn go go!");
+            }
+        }
         // When a user taps in there friends code it needs to check through the data base and find that code then send a message to another gist saying "{PlayerAsCode} Wants To Freind {PlayerBCode}" Then Player B Will Check If There Code Is On There Every 15s To Reduce Lag And If It Is Display As A Notif On MonkePhone + InfoWatch
     }
 }

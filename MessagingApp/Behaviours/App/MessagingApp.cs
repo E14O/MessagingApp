@@ -20,6 +20,7 @@ namespace MessagingApp.Behaviours.App
             _newPage = new GameObject("Info");
             _newPage.transform.SetParent(transform, false);
             _newPage.transform.position = new Vector3(-65.7571f, 11.6977f, -80.0866f);
+            _newPage.transform.position = new Vector3(-65.7571f, 11.6977f, -80.0866f);
             _newPage.transform.SetSiblingIndex(2);
 
             Transform htp = transform.Find("Header");
@@ -39,6 +40,14 @@ namespace MessagingApp.Behaviours.App
 
             gameobjectb = transform.Find("Chat Box").gameObject;
             gameobjectb.SetActive(false);
+        }
+
+        void Update()
+        {
+            if (UnityEngine.InputSystem.Keyboard.current.oKey.isPressed)
+            {
+                AppOpened();
+            }
         }
 
         public override void AppOpened()
@@ -61,7 +70,7 @@ namespace MessagingApp.Behaviours.App
         private void RefreshApp()
         {
             // hey instead of doing this cause ye we will just dup more of the text alright then add the shit to it.
-            ht.text = $"Status: {UserAuth.Instance.status}\r\n\r\nUsername: ???? \r\nFriend Code: ????";
+            ht.text = $"Status: {UserAuth.Instance.status}\r\n\r\nUsername: {UserAuth.Instance.userName} \r\nFriend Code: {UserAuth.Instance.userCode}";
         }
     }
 }
