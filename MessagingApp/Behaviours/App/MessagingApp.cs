@@ -9,7 +9,7 @@ namespace MessagingApp.Behaviours.App
     {
         public override string AppId => "Messaging";
 
-        public Text _Header;
+        public Text _Header, ht;
         public GameObject _newPage, _newPageT, gameobjecta, gameobjectb;
 
         public override void Initialize()
@@ -29,13 +29,10 @@ namespace MessagingApp.Behaviours.App
             _newPageT.transform.localPosition = new Vector3(-6.3145f, 35.0311f, 0f);
             _newPageT.transform.localScale = new Vector3(0.4544f, 0.4544f, 0.7362f);
 
-            Text ht = _newPageT.GetComponent<Text>();
+            ht = _newPageT.GetComponent<Text>();
             ht.alignment = TextAnchor.UpperLeft;
             ht.horizontalOverflow = HorizontalWrapMode.Overflow;
             ht.verticalOverflow = VerticalWrapMode.Overflow;
-
-            // hey instead of doing this cause ye we will just dup more of the text alright then add the shit to it.
-            ht.text = $"Status: {UserAuth.Instance.status}\r\n\r\nUsername: ???? \r\nFriend Code: ????";
 
             gameobjecta = transform.Find("Chat Messages").gameObject;
             gameobjecta.SetActive(false);
@@ -63,7 +60,8 @@ namespace MessagingApp.Behaviours.App
 
         private void RefreshApp()
         {
-
+            // hey instead of doing this cause ye we will just dup more of the text alright then add the shit to it.
+            ht.text = $"Status: {UserAuth.Instance.status}\r\n\r\nUsername: ???? \r\nFriend Code: ????";
         }
     }
 }
