@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MonkePhone.Tools;
 using Photon.Pun;
 using UnityEngine;
+using static FriendBackendController;
 
 namespace MessagingApp.Utilities
 {
@@ -16,6 +17,7 @@ namespace MessagingApp.Utilities
         public string PlayerId = "";
         public string UserCode = "";
         public string Status = "";
+        public string AccountInfoDisplay = "";
 
         private string info = "";
         private string setName = "";
@@ -38,17 +40,17 @@ namespace MessagingApp.Utilities
                 var response = await httpClient.GetAsync(AuthUrl);
                 response.EnsureSuccessStatusCode();
                 info = await response.Content.ReadAsStringAsync();
-                Logging.Log("httpClient Succesfully sent request.");
+                Logging.Log("httpClient Successfully sent request.");
             }
             catch (HttpRequestException e)
             {
-                Logging.Error($"Error has occured with httpClient sending request: {e}");
+                Logging.Error($"Error has occurred with httpClient sending request: {e}");
                 return;
             }
 
             while (!PhotonNetwork.IsConnectedAndReady)
             {
-                Logging.Log("httpClient waiting for PhotonNetwork to initialise...");
+                Logging.Log("httpClient waiting for PhotonNetwork to initialize...");
                 await Task.Yield();
             }
 
@@ -87,7 +89,7 @@ namespace MessagingApp.Utilities
 
             if (string.IsNullOrEmpty(setName))
             {
-                Status = "No Account\r\n\r\nYou Do Not Have A\r\nAccount. Create An\r\nAccount By Joining\r\nThe Discord Server\r\n\r\n<color=yellow>https://discord.gg/</color>\r\n<color=yellow>tbHvpqF5qy</color>";
+                Status = "No Account";
                 HasAccount = false;
                 Logging.Log("No account found for this user.");
             }
@@ -95,6 +97,16 @@ namespace MessagingApp.Utilities
             {
                 Status = "Logged In";
                 Logging.Log("User successfully authenticated.");
+            }
+
+            switch (Status)
+            {
+                case "No Account":
+                    AccountInfoDisplay = "Status: No Account\r\n\r\nYou Do Not Have A\r\nAccount. Create An\r\nAccount By Joining\r\nThe Discord Server\r\n\r\n<color=yellow>https://discord.gg/</color>\r\n<color=yellow>tbHvpqF5qy</color>";
+                    break;
+                case "Logged In":
+                    AccountInfoDisplay = $"Status: {Status}\n\nUsername: {UserName}\nFriend Code: {UserCode}";
+                    break;
             }
         }
     }

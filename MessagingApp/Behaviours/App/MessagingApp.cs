@@ -1,4 +1,5 @@
-﻿using MessagingApp.Utilities;
+﻿using System.Linq.Expressions;
+using MessagingApp.Utilities;
 using MonkePhone.Behaviours;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,9 +25,9 @@ namespace MessagingApp.Behaviours.App
             _newPage.transform.localPosition = new Vector3(0f, 0f, 0f);
             _newPage.transform.SetSiblingIndex(2);
 
-            _newPageT = Instantiate(htp.gameObject, transform, false);
+            _newPageT = Instantiate(htp.gameObject, _newPage.transform, false);
             _newPageT.name = "AuthText";
-            _newPageT.transform.localPosition = new Vector3(-6.3145f, 35.0311f, 0f);
+            _newPageT.transform.localPosition = new Vector3(-6.3145f, 30.5311f, 0f);
             _newPageT.transform.localScale = new Vector3(0.4544f, 0.4544f, 0.7362f);
 
             ht = _newPageT.GetComponent<Text>();
@@ -58,7 +59,7 @@ namespace MessagingApp.Behaviours.App
 
         private void RefreshApp()
         {
-            ht.text = $"Status: {UserAuth.Instance.Status}\n\nUsername: {UserAuth.Instance.UserName}\nFriend Code: {UserAuth.Instance.UserCode}";
+            ht.text = $"{UserAuth.Instance.AccountInfoDisplay}";
         }
     }
 }

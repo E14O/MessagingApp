@@ -2,7 +2,7 @@
 {
     internal class Constants
     {
-        public const string GUID = "H4RNS.FBG.MessagingApp";
+        public const string GUID = "H4RNS.E14O.MessagingApp";
 
         public const string Name = "MessagingApp";
 
