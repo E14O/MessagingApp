@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\utilities\\userauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|c:\\users\\ashto\\downloads\\gorillatagmodsslns\\messagingapp\\messagingapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|c:\\users\\ashto\\downloads\\gorillatagmodsslns\\messagingapp\\messagingapp\\behaviours\\app\\messagingapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\behaviours\\app\\messagingapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|c:\\users\\ashto\\downloads\\gorillatagmodsslns\\messagingapp\\messagingapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|c:\\users\\ashto\\downloads\\gorillatagmodsslns\\messagingapp\\messagingapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|c:\\users\\ashto\\downloads\\gorillatagmodsslns\\messagingapp\\messagingapp\\messagingapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\messagingapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|c:\\users\\ashto\\downloads\\gorillatagmodsslns\\messagingapp\\messagingapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}|MessagingApp\\MessagingApp.csproj|solutionrelative:messagingapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,13 +46,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Plugin.cs",
               "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\Plugin.cs",
               "RelativeDocumentMoniker": "MessagingApp\\Plugin.cs",
               "ToolTip": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\Plugin.cs",
               "RelativeToolTip": "MessagingApp\\Plugin.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAADwv0EAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T15:30:30.636Z",
               "EditorCaption": ""
@@ -65,14 +65,14 @@
               "RelativeDocumentMoniker": "MessagingApp\\Utilities\\UserAuth.cs",
               "ToolTip": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\Utilities\\UserAuth.cs",
               "RelativeToolTip": "MessagingApp\\Utilities\\UserAuth.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-30T15:39:19.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MessagingApp.csproj",
               "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\MessagingApp.csproj",
               "RelativeDocumentMoniker": "MessagingApp\\MessagingApp.csproj",
@@ -80,11 +80,12 @@
               "RelativeToolTip": "MessagingApp\\MessagingApp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-28T15:32:45.195Z"
+              "WhenOpened": "2025-06-28T15:32:45.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Constants.cs",
               "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\Constants.cs",
               "RelativeDocumentMoniker": "MessagingApp\\Constants.cs",
@@ -97,13 +98,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MessagingApp.cs",
               "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\Behaviours\\App\\MessagingApp.cs",
               "RelativeDocumentMoniker": "MessagingApp\\Behaviours\\App\\MessagingApp.cs",
               "ToolTip": "C:\\Users\\Ashto\\Downloads\\GorillatagModsSLNS\\MessagingApp\\MessagingApp\\Behaviours\\App\\MessagingApp.cs",
               "RelativeToolTip": "MessagingApp\\Behaviours\\App\\MessagingApp.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAD0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T15:29:53.738Z",
               "EditorCaption": ""

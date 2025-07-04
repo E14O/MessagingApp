@@ -3,10 +3,8 @@ using System.Collections;
 using BepInEx;
 using MessagingApp.Utilities;
 using MonkePhone.Behaviours;
-using MonkePhone.Behaviours.UI;
 using Photon.Pun;
 using UnityEngine;
-using Viveport;
 
 namespace MessagingApp
 {
@@ -26,7 +24,7 @@ namespace MessagingApp
             try
             {
                 new GameObject(Constants.Name, typeof(UserAuth));
-                Logger.LogInfo("Loading UserAuth...");
+                Logger.LogInfo("Handling UserAuth...");
 
                 StartCoroutine(PhoneHandlerInit());
             }
@@ -61,8 +59,8 @@ namespace MessagingApp
                     {
                         case "MessagingIcon":
                             Icon.gameObject.SetActive(true);
-                          //  Icon.gameObject.GetComponent<MonkePhone.Behaviours.UI.PhoneAppIcon>().Destroy();
-                            Icon.gameObject.AddComponent<PhoneAppIcon>().appId = "Messaging";
+                            //  Icon.gameObject.GetComponent<MonkePhone.Behaviours.UI.PhoneAppIcon>().Destroy();
+                            // Icon.gameObject.AddComponent<PhoneAppIcon>().appId = "Messaging";
                             break;
 
                     }
