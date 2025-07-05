@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingApp", "MessagingApp\MessagingApp.csproj", "{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApp", "MusicApp\MusicApp.csproj", "{EF397DFD-5828-4057-8CC1-9CDDD67868A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D65017C8-CD87-4AA7-BEDB-FDCD827BC33E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF397DFD-5828-4057-8CC1-9CDDD67868A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF397DFD-5828-4057-8CC1-9CDDD67868A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF397DFD-5828-4057-8CC1-9CDDD67868A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF397DFD-5828-4057-8CC1-9CDDD67868A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C5F161EE-72FD-4241-BE3A-69656787FCA9}
+		SolutionGuid = {3C980F63-D9BB-4E10-9177-6F8B7C6D9B5B}
 	EndGlobalSection
 EndGlobal

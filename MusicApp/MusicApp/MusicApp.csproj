@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	
+
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
-		<LangVersion>9.0</LangVersion>
+		<LangVersion>12.0</LangVersion>
 	</PropertyGroup>
 
   <ItemGroup>
@@ -83,9 +83,6 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>$(GameAssemblyPath)\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>$(GameAssemblyPath)\Unity.Timeline.dll</HintPath>

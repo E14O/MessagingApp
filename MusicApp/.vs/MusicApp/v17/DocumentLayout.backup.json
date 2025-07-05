@@ -1,0 +1,114 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ashto\\Downloads\\MusicApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:1:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|c:\\users\\ashto\\downloads\\musicapp\\musicapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:1:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|solutionrelative:musicapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|c:\\users\\ashto\\downloads\\musicapp\\musicapp\\behaviours\\app\\musicapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|solutionrelative:musicapp\\behaviours\\app\\musicapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|c:\\users\\ashto\\downloads\\musicapp\\musicapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|solutionrelative:musicapp\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|c:\\users\\ashto\\downloads\\musicapp\\musicapp\\musicapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|solutionrelative:musicapp\\musicapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|c:\\users\\ashto\\downloads\\musicapp\\musicapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{EF397DFD-5828-4057-8CC1-9CDDD67868A6}|MusicApp\\MusicApp.csproj|solutionrelative:musicapp\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MusicApp.cs",
+              "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Behaviours\\App\\MusicApp.cs",
+              "RelativeDocumentMoniker": "MusicApp\\Behaviours\\App\\MusicApp.cs",
+              "ToolTip": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Behaviours\\App\\MusicApp.cs",
+              "RelativeToolTip": "MusicApp\\Behaviours\\App\\MusicApp.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:50:58.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Plugin.cs",
+              "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Plugin.cs",
+              "RelativeDocumentMoniker": "MusicApp\\Plugin.cs",
+              "ToolTip": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Plugin.cs",
+              "RelativeToolTip": "MusicApp\\Plugin.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwDEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:49:42.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MusicApp.csproj",
+              "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\MusicApp.csproj",
+              "RelativeDocumentMoniker": "MusicApp\\MusicApp.csproj",
+              "ToolTip": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\MusicApp.csproj",
+              "RelativeToolTip": "MusicApp\\MusicApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-05T15:49:09.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Constants.cs",
+              "RelativeDocumentMoniker": "MusicApp\\Constants.cs",
+              "ToolTip": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Constants.cs",
+              "RelativeToolTip": "MusicApp\\Constants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:48:47.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Plugin.cs",
+              "DocumentMoniker": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Plugin.cs",
+              "RelativeDocumentMoniker": "MusicApp\\Plugin.cs",
+              "ToolTip": "C:\\Users\\Ashto\\Downloads\\MusicApp\\MusicApp\\Plugin.cs",
+              "RelativeToolTip": "MusicApp\\Plugin.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwD0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:48:34.936Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

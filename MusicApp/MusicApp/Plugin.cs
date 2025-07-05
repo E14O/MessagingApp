@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections;
 using BepInEx;
-using MessagingApp.Utilities;
 using MonkePhone.Behaviours;
 using Photon.Pun;
 using UnityEngine;
 
-namespace MessagingApp
+namespace MusicApp
 {
     [BepInPlugin(Constants.GUID, Constants.Name, Constants.Version)]
     public class Plugin : BaseUnityPlugin
@@ -23,14 +22,11 @@ namespace MessagingApp
         {
             try
             {
-                new GameObject(Constants.Name, typeof(UserAuth));
-                Logger.LogInfo("Handling UserAuth...");
-
                 StartCoroutine(PhoneHandlerInit());
             }
             catch
             {
-                Logger.LogError($"{Constants.Name} Unavailable, Account data could not be loaded.");
+                Logger.LogError($"{Constants.Name} Unavailable, could not start Init.");
             }
         }
 
@@ -44,10 +40,10 @@ namespace MessagingApp
                 {
                     switch (app.name)
                     {
-                        case "MessagingApp":
-                            app.gameObject.SetActive(true);
-                            app.GetComponent<MonkePhone.Behaviours.Apps.MessagingApp>().Destroy();
-                            PhoneHandler.Instance.CreateApp<Behaviours.App.MessagingApp>(app.gameObject);
+                        case "MusicApp":
+                            app.gameObject.SetActive(false);
+                            app.GetComponent<MonkePhone.Behaviours.Apps.MusicApp>().Destroy();
+                            PhoneHandler.Instance.CreateApp<Behaviours.App.MusicApp>(app.gameObject);
                             Logger.LogInfo($"Creating App...");
                             break;
                     }
@@ -57,10 +53,10 @@ namespace MessagingApp
                 {
                     switch (Icon.name)
                     {
-                        case "MessagingIcon":
+                        case "MonkeMusic":
                             Icon.gameObject.SetActive(true);
                             //  Icon.gameObject.GetComponent<MonkePhone.Behaviours.UI.PhoneAppIcon>().Destroy();
-                            // Icon.gameObject.AddComponent<PhoneAppIcon>().appId = "Messaging";
+                            // Icon.gameObject.AddComponent<PhoneAppIcon>().appId = "Music";
                             break;
 
                     }
