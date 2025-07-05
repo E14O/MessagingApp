@@ -17,7 +17,7 @@
 
 1) Download The DLL From The Releases Tab.
 2) Install [MonkePhone](https://github.com/developer9998/MonkePhone-Public)
-3) Place Both The DLL's Into Your `belpInEx/plugins` Folder.
+3) Place Both The DLL's Into Your `BelpInEx/plugins` Folder.
 4) Launch Your Game And Open The Music App On The Phone
 5) To Install Custom Music Go To: `BepInEx/MonkePhone/Music`.
 6) Re-Launch Your Game And Listen So Some Music!
